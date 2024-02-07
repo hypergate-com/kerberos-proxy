@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  squid:
+    image: ubuntu/squid:latest
+    volumes:
+      - ./squid.conf:/etc/squid/squid.conf 
+      - ./krb5.conf:/etc/krb5.conf # Mount the Kerberos configuration file
+      - ./squid.keytab:/etc/squid/squid.keytab # Mount the keytab file for Kerberos authentication
+      - squid_cache:/var/spool/squid 
+    ports:
+      - "3128:3128" # Run proxy on port 3128
+
+  pac-host:
+    image: httpd:alpine
+    volumes:
+      - ./pac:/usr/local/apache2/htdocs  # Mount the directory containing your PAC file
+    ports:
+      - "80:80"  # Expose the web server on port 80 (in a production environment make sure to use HTTPS instead of HTTP)
+
+volumes:
+  squid_cache:
