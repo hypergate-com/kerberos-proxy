@@ -1,6 +1,6 @@
 # PAC Proxy with Kerberos Authentication Setup for Hypergate
 
-This guide outlines the steps to set up a PAC (Proxy Auto-Configuration) proxy with Kerberos authentication for Android devices managed by an MDM (such as Intune). The setup involves configuring a Squid proxy server and an HTTP server to host the PAC file, all containerized using Docker.
+This guide outlines the steps to set up a PAC (Proxy Auto-Configuration) proxy with Kerberos authentication for Android devices managed by an MDM (such as Intune). The setup involves configuring a Squid proxy server and an HTTP server to host the PAC file, all containerized using Docker. Also have a look at the correspondig blog post at https://hypergate.com/blog/kerberos-proxy-for-android-enterprise/ .
 
 ## Prerequisites
 
